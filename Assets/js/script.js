@@ -1,5 +1,4 @@
 var cities = [];
-
 var cityFormEl=document.querySelector("#city-search-form");
 var cityInputEl=document.querySelector("#city");
 var weatherContainerEl=document.querySelector("#current-weather-container");
@@ -41,8 +40,6 @@ var displayWeather = function(weather, searchCity){
    //clear old content
    weatherContainerEl.textContent= "";  
    citySearchInputEl.textContent=searchCity;
-
-   //console.log(weather);
 
    //create date element
    var currentDate = document.createElement("span")
@@ -90,7 +87,6 @@ var getUvIndex = function(lat,lon){
     .then(function(response){
         response.json().then(function(data){
             displayUvIndex(data)
-           // console.log(data)
         });
     });
 }
@@ -182,9 +178,6 @@ var display5Day = function(weather){
 }
 
 var pastSearch = function(pastSearch){
- 
-    // console.log(pastSearch)
-
     pastSearchEl = document.createElement("button");
     pastSearchEl.textContent = pastSearch;
     pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
@@ -194,7 +187,6 @@ var pastSearch = function(pastSearch){
     pastSearchButtonEl.prepend(pastSearchEl);
 }
 
-
 var pastSearchHandler = function(event){
     var city = event.target.getAttribute("data-city")
     if(city){
@@ -202,8 +194,5 @@ var pastSearchHandler = function(event){
         get5Day(city);
     }
 }
-
-// pastSearch();
-
 cityFormEl.addEventListener("submit", formSumbitHandler);
 pastSearchButtonEl.addEventListener("click", pastSearchHandler);

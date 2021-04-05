@@ -26,3 +26,11 @@ span.favorable{
     background-color: green;
     color:white;
 }
+
+header{
+    background-image: radial-gradient(blue,lightblue);
+}
+
+header h1{
+    text-align: center;
+}
